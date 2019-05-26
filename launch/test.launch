@@ -1,0 +1,4 @@
+<launch>
+ <include file="$(find xrxr_dfrobot)/launch/t265.launch"/>
+ <node name="xrxr_dfrobot_cfg" pkg="xrxr_dfrobot" type="xrxr_cfg.py" output="screen" />
+</launch>

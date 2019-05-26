@@ -1,0 +1,5 @@
+<launch>
+    <node name="xrxr_dfrobot_carib" pkg="xrxr_dfrobot" type="carib.py" output="screen" >
+        <param name="odom" value="/camera/odom/sample" /> 
+    </node>
+</launch>
