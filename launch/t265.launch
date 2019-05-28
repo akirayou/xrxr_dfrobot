@@ -1,14 +1,15 @@
 <launch>
 <group ns="camera">
     <include file="$(find realsense2_camera)/launch/includes/nodelet.launch.xml">
-        <arg name="serial_no"             value="852212110070"/>
-        <arg name="enable_fisheye1"       value="false"/>
-        <arg name="enable_fisheye2"       value="false"/>
-        <arg name="enable_fisheye"       value="false"/>
+        <arg name="tf_prefix"          value="camera"/>
+        <arg name="serial_no"          value="852212110070"/>
+        <arg name="enable_fisheye1"    value="false"/>
+        <arg name="enable_fisheye2"    value="false"/>
+        <arg name="enable_fisheye"     value="false"/>
         <arg name="enable_color"       value="false"/>
         <arg name="enable_depth"       value="false"/>
-        <arg name="enable_infra1"       value="false"/>
-        <arg name="enable_infra2"       value="false"/>
+        <arg name="enable_infra1"      value="false"/>
+        <arg name="enable_infra2"      value="false"/>
     </include>
 </group>
 </launch>
