@@ -1,0 +1,14 @@
+<launch>
+    <include file="$(find xrxr_dfrobot)/launch/d435.launch"/>
+    <node pkg="nodelet" type="nodelet" name="realsense2_camera_manager" args="manager" output="screen"/>
+    <node pkg="nodelet" type="nodelet" name="realsense2_camera" args="load laserscan_kinect/LaserScanKinectNodelet realsense2_camera_manager">
+        <remap from="image" to="/d435/depth/image_rect_raw"/>
+        <remap from="camera_info" to="/t435/depth/camera_info"/>
+        <param name="sensor_tilt_angle" value="-0.22"/>
+        <param name="sensor_mount_height" value="0.10"/>
+        <param name="ground_remove_en" value="true"/>
+        <param name="range_min" value="0.05"/>
+        <param name="range_max" value="5"/>
+        <param name="output_frame_id" value="scan"/>
+    </node> 
+</launch>

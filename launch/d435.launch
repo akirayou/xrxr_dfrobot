@@ -1,0 +1,25 @@
+<launch>
+<group ns="d435">
+    <include file="$(find realsense2_camera)/launch/includes/nodelet.launch.xml">
+        <arg name="tf_prefix"          value="d435"/>
+        <arg name="serial_no"          value="848312071481"/>
+        <arg name="enable_fisheye1"    value="false"/>
+        <arg name="enable_fisheye2"    value="false"/>
+        <arg name="enable_fisheye"     value="false"/>
+        <arg name="enable_color"       value="false"/>
+        <arg name="enable_depth"       value="true"/>
+        <arg name="enable_infra1"      value="false"/>
+        <arg name="enable_infra2"      value="false"/>
+        <arg name="depth_fps"           default="6"/>
+        <arg name="depth_width"           default="640"/>
+        <arg name="depth_height"           default="480"/>
+        <arg name="enable_pointcloud"   default="false"/>
+        <arg name="initial_reset"           default="true"/>
+        <arg name="filters"               value=""/>
+
+        
+        <arg name="pointcloud_texture_stream" default="RS2_STREAM_ANY"/>  <!-- default RS2_STREAM_COLOR use RS2_STREAM_ANY to avoid using texture -->
+ 
+    </include>
+</group>
+</launch>

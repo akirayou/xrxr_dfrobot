@@ -1,0 +1,15 @@
+<launch>
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="tf_camera1" args="0 0 0  0 0.62831853 0 t265_link t265_link_T" />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="tf_camera2" args="0 -0.01 -0.025 0 0.419 0 t265_link d435_link" />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="tf_camera3" args="0 0 -0.03 0 0 0 t265_link_T scan" />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="tf_camera4" args="-0.055 0 -0.03  0 0 0 t265_link_T base_link" />
+
+
+    <include file="$(find xrxr_dfrobot)/launch/scan_d435.launch"/>
+    <include file="$(find xrxr_dfrobot)/launch/t265.launch"/>
+    <include file="$(find xrxr_dfrobot)/launch/pid.launch"/>
+    <include file="$(find xrxr_dfrobot)/launch/move.launch"/>
+
+
+</launch>

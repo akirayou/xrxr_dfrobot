@@ -137,8 +137,9 @@ if __name__ == "__main__":
     wait_odom()
     while not rospy.is_shutdown():
         RATE.sleep()
-        rospy.loginfo( "Vx:%03f - %03f \t Rz:%03f - %03f \t Motor:%03f , %03f  ",
-            PID_v.target, PID_v.E ,PID_r.target, PID_r.E,motorL,motorR)
+        if(0):
+            rospy.loginfo( "Vx:%03f - %03f \t Rz:%03f - %03f \t Motor:%03f , %03f  ",
+                PID_v.target, PID_v.E ,PID_r.target, PID_r.E,motorL,motorR)
         if(not have_odom()):
             #motor()function have big delay on Error state. (such as no power)
             #In case of that, subscriber loop (sub_odom) will not run correctory

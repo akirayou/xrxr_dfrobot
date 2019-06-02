@@ -1,0 +1,7 @@
+<launch>
+    <node name="xrxr_dfrobot_cfg" pkg="xrxr_dfrobot" type="xrxr_cfg.py" output="screen" />
+    <node name="xrxr_dfrobot_pid" pkg="xrxr_dfrobot" type="pid.py" output="screen" >
+        <param name="odom" value="/t265/odom/sample" /> 
+        <param name="cmd_vel" value="/cmd_vel" /> 
+    </node>
+</launch>
